@@ -23,7 +23,7 @@ In this lab, we will prepare our **VPC** through **Cloudformation**. Create a **
 
 ### Set up your VPC with CloudFormation template
 
-Use the [ClouFormation template](/VPC.yml) to setup your environment.
+Use the [ClouFormation template](VPC.yaml) to setup your environment.
 
 1. On the **Service** menu, select [CloudFormation](https://console.aws.amazon.com/cloudformation/).
 
@@ -41,7 +41,8 @@ Use the [ClouFormation template](/VPC.yml) to setup your environment.
 </p>
 </div>
 
-6. Input `Lab-Stack` for the **Stack name**, select **Next**.
+6. Input `Lab-Stack-<your-name>` for the **Stack name**, select **Next**.
+> Ex: `Lab-Stack-John`.
 
 7. Leave the settings as default, select **Next**.
 
@@ -66,7 +67,8 @@ For the security layer, we have to limit the source which can access to our data
 
 6. Add a **MySQL/Aurora** inbound rule:
     * Type: `MySQL/Aurora`
-    * Source: `<Your-Web-SG-ID>`
+    * Source: `<Your-Web-Security-Grpup-ID>`
+    > The **Web Security Group** is created by the **CloudFormation template**, it should be named: `WebSecurityGroup`
 
 <div>
 <p align=center>
@@ -82,7 +84,7 @@ For the security layer, we have to limit the source which can access to our data
 
 3. Select **Create DB Subnet Group**.
 
-4. Fill in these configuratios:
+4. Fill in these configurations:
     * Name: `Lab DB subnet group`
     * Description: `Lab DB subnet group`
     * VPC: `Lab VPC`
@@ -179,7 +181,7 @@ For the security layer, we have to limit the source which can access to our data
         * **Subnet group**: `lab db subnet group`
         * **VPC security group**: ☑ **Choose existing**
         * **Existing VPC security groups**:
-            * Discheck `default`
+            * Uncheck `default`
             * ☑ `Lab DB Security Group`
 
 <div>
@@ -198,7 +200,7 @@ For the security layer, we have to limit the source which can access to our data
 </p>
 </div>
 
-12. Scroll to the buttom of the page, discheck the box of: **Deletion protection**.
+12. Scroll to the bottom of the page, uncheck the box of: **Deletion protection**.
 
 13. Select **Create Database**, it will take ***10 - 15*** minutes to create your database, click **View DB instance details**, and keep refresh your webpage to check if it is done.
 
@@ -238,14 +240,15 @@ service httpd start
 ```
 
 8. Select **Next: Add Storage** -> **Next: Add Tags** -> **Next: Configure Security Group**
+> (Optional) You can add tags to specify the instance.
 
 9. ☑ **Select an existing security group**, and select **WebSecurityGroup**.
 
 10. Select **Review and Launch** -> **Launch**.
 
-11. You can **Choose an existing key pair** or **Create a new key pair**, ☑ I acknowlege...., and select **Launch Instances**.
+11. You can **Choose an existing key pair** or **Create a new key pair**, ☑ I acknowledge...., and select **Launch Instances**.
 
-12. Because we have launch the instance with an ***user data***, it might take ***3 - 5*** minutes to launch.
+12. Because we have launch the instance with an ***user data***, it might take ***3 - 5*** minutes to launch, you can click **View Instances** to check the instance's status.
 
 ### Test with the CRUD webpage
 
