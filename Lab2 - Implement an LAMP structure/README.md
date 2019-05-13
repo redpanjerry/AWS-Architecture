@@ -67,7 +67,7 @@ For the security layer, we have to limit the source which can access to our data
 
 6. Add a **MySQL/Aurora** inbound rule:
     * Type: `MySQL/Aurora`
-    * Source: `<Your-Web-Security-Grpup-ID>`
+    * Source: `<Your-Web-Security-Group-ID>`
     > The **Web Security Group** is created by the **CloudFormation template**, it should be named: `WebSecurityGroup`
 
 <div>
@@ -120,7 +120,7 @@ For the security layer, we have to limit the source which can access to our data
 </p>
 </div>
 
-5. Select **Production - MySQL** for **Use Case**, and select **Next**.
+5. For **Templates** section, select **Production - MySQL** 
 
 <div>
 <p align=center>
@@ -213,6 +213,7 @@ For the security layer, we have to limit the source which can access to our data
 3. Select **Launch Instance**.
 
 4. At the part of **Choose AMI**, select **Amazon Linux AMI**.
+> **(Warning!!!)** If you choose **Amazon Linux 2 AMI**, the user data won't work.
 
 5. Select **t2.micro** for **Instance Type**, and select **Next: Configure Instance Details**.
 
@@ -246,7 +247,7 @@ service httpd start
 
 10. Select **Review and Launch** -> **Launch**.
 
-11. You can **Choose an existing key pair** or **Create a new key pair**, ☑ I acknowledge...., and select **Launch Instances**.
+11. You can **Choose an existing key pair** or **Create a new key pair**, ☑ **I acknowledge....**, and select **Launch Instances**.
 
 12. Because we have launch the instance with an ***user data***, it might take ***3 - 5*** minutes to launch, you can click **View Instances** to check the instance's status.
 
