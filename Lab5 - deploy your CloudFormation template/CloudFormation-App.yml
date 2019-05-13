@@ -1,0 +1,97 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: >-
+  Network Template: Sample template that creates a VPC with DNS and public IPs enabled.
+
+# This template creates:
+#   Security Groups
+#   EC2 instance
+
+######################
+# Resources section
+######################
+
+Parameters:
+
+  NetworkStackName:
+    Description: >-
+      Name of an active CloudFormation stack that contains the networking
+      resources, such as the VPC and subnet that will be used in this stack.
+    Type: String
+    MinLength: 1
+    MaxLength: 255
+    AllowedPattern: '^[a-zA-Z][-a-zA-Z0-9]*$'
+    Default: Lab-VPC-Stack
+
+  InstanceType:
+    Description: WebServer EC2 instance type
+    Type: String
+    Default: t2.micro
+    AllowedValues: [t2.nano, t2.micro, t2.small, t2.medium, t2.large, t2.xlarge, t2.2xlarge,
+      t3.nano, t3.micro, t3.small, t3.medium, t3.large, t3.xlarge, t3.2xlarge,
+      m4.large, m4.xlarge, m4.2xlarge, m4.4xlarge, m4.10xlarge,
+      m5.large, m5.xlarge, m5.2xlarge, m5.4xlarge,
+      c5.large, c5.xlarge, c5.2xlarge, c5.4xlarge, c5.9xlarge,
+      g3.8xlarge,
+      r5.large, r5.xlarge, r5.2xlarge, r5.4xlarge, r3.12xlarge,
+      i3.xlarge, i3.2xlarge, i3.4xlarge, i3.8xlarge,
+      d2.xlarge, d2.2xlarge, d2.4xlarge, d2.8xlarge]
+    ConstraintDescription: must be a valid EC2 instance type.
+
+  LatestAmiId:
+    Type:  'AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>'
+    Default: '/aws/service/ami-amazon-linux-latest/amzn-ami-hvm-x86_64-gp2'
+
+Resources:
+
+  ## Security Group
+
+  WebSecurityGroup:  
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupName: "WebSecurityGroup"
+      GroupDescription: "Enable HTTP access"
+      VpcId:
+        Fn::ImportValue:
+          !Sub ${NetworkStackName}-VPCID
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0    
+
+  ## EC2 instance
+
+  EC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      SubnetId:
+        Fn::ImportValue:
+          !Sub ${NetworkStackName}-SubnetID
+      InstanceType: !Ref 'InstanceType'
+      SecurityGroupIds: [!Ref 'WebSecurityGroup']
+      ImageId: !Ref 'LatestAmiId'
+      UserData:
+        Fn::Base64: !Sub |
+          #!/bin/bash
+          # Install Apache Web Server and PHP 
+          yum install -y php72 wget httpd24
+          # Download Lab files 
+          wget https://raw.githubusercontent.com/ecloudvalley/How-to-build-an-elastic-structure/master/index.php
+          mv index.php /var/www/html/
+          # Turn on web server 
+          chkconfig httpd on 
+          service httpd start
+      Tags:
+        - 
+          Key: "Name"
+          Value: "My Lab EC2"
+                    
+######################
+# Outputs section
+######################
+
+Outputs:
+
+  URL:
+    Description: URL of the sample website
+    Value: !Sub 'http://${EC2Instance.PublicDnsName}'
