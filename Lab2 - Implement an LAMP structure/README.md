@@ -2,6 +2,12 @@
 
 ## Overview
 
+<div>
+<p align="center">
+<img src="images/LAMP.png">
+</p>
+</div>
+
 **LAMP** is an archetypal model of web service stacks, named as an acronym of the names of its original four open-source components: **the Linux operating system, the Apache HTTP Server, the MySQL relational database management system (RDBMS), and the PHP programming language**.
 
 **Amazon RDS** makes it easy to set up, operate, and scale a relational database in the cloud. It provides cost-efficient and resizable capacity while automating time-consuming administration tasks such as hardware provisioning, database setup, patching and backups. It frees you to focus on your applications so you can give them the fast performance, high availability, security and compatibility they need.
@@ -10,7 +16,7 @@
 
 ## Scenario
 
-In this lab, we will prepare our **VPC** through **Cloudformation**. Create a **RDS** instance, and then launch an **EC2 instance** with user data.
+In this lab, we will prepare our **VPC** through **Cloudformation**. Create a **RDS** instance, and then launch an **EC2 instance** with user data. At last, **Create, Read, Update, Delete** data in our RDS database through the web site hosted by EC2 instance.
 
 ## Prerequisites
 
