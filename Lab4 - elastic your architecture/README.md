@@ -34,7 +34,7 @@ AWS CloudFormation is available at no additional charge, and you pay only for th
 
 4. In **Specify template**, select **Upload a template file** and click **choose file**.
 
-5. Find **lab-network.yaml**, which downloaded in prerequisites part and upload it.
+5. Find **lab-network.yml**, which downloaded in prerequisites part and upload it.
 
 6. Select **Next** to go on.
 
@@ -88,6 +88,7 @@ We have create half of the VPC environment in the previous part, now we're finis
 7. In the navigation pane, select **Elastic IPs**.
 
 8. Select **Allocate new address** and click **Allocate**.
+> Note this EIP, we will use it later.
 
 9. In the navigation pane, select **NAT Gateways**.
 
@@ -95,7 +96,7 @@ We have create half of the VPC environment in the previous part, now we're finis
 
 11. Select `Lab Public Subnet 2` and the Elastic IP you allocate before.
 
-12. Select **Create a NAT Gateway**.
+12. Select **Create a NAT Gateway** and **Close**.
 
 13. In the navigation pane, select **Route Tables**.
 
@@ -112,7 +113,7 @@ We have create half of the VPC environment in the previous part, now we're finis
     * Destination: `0.0.0.0/0`
     * Target: `The NAT Gateway you create in previous step`
 
-19. Click **Save routes**.
+19. Click **Save routes** and **Close**.
 
 20. Back to Route table list, select **Private Route** again and click **Subnet Association** tab in the bottom.
 
@@ -236,7 +237,7 @@ service httpd start
 
 ### Create Launch Template
 
-1. On the left navigaiton pane, select **Launch Template**, and select **Create Launch Template**.
+1. On the left navigation pane, select **Launch Template**, and select **Create Launch Template**.
 
 2.  * Choose **Create a new template**
     * **Launch template name**: `Auto-Scaling-Launch`
@@ -248,7 +249,7 @@ service httpd start
     * **Network type**: `VPC`
     * **Security Groups**: `Web SG`
 
-4. In Instance tags, type:
+4. On the bottom of the page, in **Instance tags**, type:
     * **Key**: `Name`
     * **Value**: `Your name`
 
@@ -256,7 +257,7 @@ service httpd start
 
 6. Select **Set your maximum price(per instance/hour)**, type $ ```0.0045```, and select ```One-time``` for **Request type**.
 
-7. Scroll down to the buttom of the page, copy and paste the command line below into the **User Data** which host a static web page:
+7. Scroll down to the bottom of the page, copy and paste the command line below into the **User Data** which host a static web page:
 
 ```bash
 #!/bin/bash
@@ -283,7 +284,7 @@ service httpd start
     * Network: select **My Lab VPC**
     * Subnet: select both **Lab Private Subnet 1** and **Lab Private Subnet 2**
 
-2. (**Option**) Launch Template allow you to combine different types of EC2 when you create an auto scaling group. You can select **Combine purchase options and instances** and discheck **Use the default settings to get started quickly** to deploy the instances you want.
+2. (**Option**) Launch Template allow you to combine different types of EC2 when you create an auto scaling group. You can select **Combine purchase options and instances** and uncheck **Use the default settings to get started quickly** to deploy the instances you want.
 
 <p align="center">
     <img src="images/009-ASG-Option.jpg" width="70%" height="70%">
@@ -306,7 +307,7 @@ service httpd start
 8. Specify the following settings:
     * Name: **Scale Group Size**
     * Metric type: **Average CPU Utilization**
-    * Target value: **50**
+    * Target value: **70**
 
 <p align="center">
     <img src="images/011-ASG-Policy.jpg" width="70%" height="70%">
