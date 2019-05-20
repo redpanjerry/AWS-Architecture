@@ -6,7 +6,7 @@ This part will walk you to create an Application Load Balancer to distributes in
 
 [Auto Scaling](https://aws.amazon.com/autoscaling/?nc1=h_ls) monitors your applications and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost. Using AWS Auto Scaling, it’s easy to setup application scaling for multiple resources across multiple services in minutes. Scaling Policy can be customized in several ways.
 
-When there's huge or unstable traffic, you can use load balancer to distributes incoming traffic, and setup Auto scaling to genarate enough instances to handle the traffic.
+When there's huge or unstable traffic, you can use load balancer to distributes incoming traffic, and setup Auto scaling to generate enough instances to handle the traffic.
 
 <p align="center">
     <img src="images/001-elb-architecture.png" width="70%" height="70%">
@@ -18,7 +18,7 @@ The following procedures help you set up a scaled and load-balanced application,
 ## Prerequisites
 > The workshop’s region will be in ‘N.Virginia’
 
-> Download [lab-network](lab-network.yaml/) to deploy
+> Download [lab-network](lab-network.yml/) to deploy
 
 ## Step by step 
 ### Deploy your VPC environment
