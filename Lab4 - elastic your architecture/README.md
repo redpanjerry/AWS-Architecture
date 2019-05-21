@@ -187,9 +187,9 @@ Now you have create two public and private subnet so far, they are now associate
 ### Create Launch Configuration or Launch Template 
 In this part, select Launch Configuration or Launch Template to setup your auto scaling instances. Launch Configuration provide a simple way to create instance just like create a single EC2. Launch Template let you combine different types of EC2 instances, and customize the percentage of on-demand and spot instance.
 
-Launch Configuration
+[Launch Configuration](#create-launch-configuration)
 
-Launch Template
+[Launch Template](#create-launch-template)
 
 ### Create Launch Configuration
 
@@ -207,7 +207,7 @@ Launch Template
     * Purchasing option: select **Request Spot Instance**
     * Maximum price: **0.05**
     * User data: copy the following 
-```
+```bash
 #!/bin/bash
 # Install Apache Web Server and PHP 
 yum install -y php72 wget httpd24
@@ -235,6 +235,8 @@ service httpd start
 
 13. Select **Create an Auto Scaling group using this launch configuration**.
 
+Move to step Create Auto Scaling group
+
 ### Create Launch Template
 
 1. On the left navigation pane, select **Launch Template**, and select **Create Launch Template**.
@@ -253,11 +255,7 @@ service httpd start
     * **Key**: `Name`
     * **Value**: `Your name`
 
-5. Expand the **Advanced details**, check **Request Spot Instances**, and select **Customize Spot parameters**.
-
-6. Select **Set your maximum price(per instance/hour)**, type $ ```0.0045```, and select ```One-time``` for **Request type**.
-
-7. Scroll down to the bottom of the page, copy and paste the command line below into the **User Data** which host a static web page:
+5. Scroll down to the bottom of the page, copy and paste the command line below into the **User Data** which host a static web page:
 
 ```bash
 #!/bin/bash
@@ -271,9 +269,9 @@ chkconfig httpd on
 service httpd start
 ```
 
-8. Select **Create Launch Template**.
+6. Select **Create Launch Template**.
 
-9. After the **Success** page showed up, select **Create Auto Scaling group** in the middle of the page.
+7. After the **Success** page showed up, select **Create Auto Scaling group** in the middle of the page.
 
 ### Create Auto Scaling group
 
@@ -284,7 +282,7 @@ service httpd start
     * Network: select **My Lab VPC**
     * Subnet: select both **Lab Private Subnet 1** and **Lab Private Subnet 2**
 
-2. (**Option**) Launch Template allow you to combine different types of EC2 when you create an auto scaling group. You can select **Combine purchase options and instances** and uncheck **Use the default settings to get started quickly** to deploy the instances you want.
+2. (**Option**) If you create your auto scaling group with **launch template**, you will be able to combine different types of EC2 when you create an auto scaling group. You can select **Combine purchase options and instances** and uncheck **Use the default settings to get started quickly** to deploy the instances you want.
 
 <p align="center">
     <img src="images/009-ASG-Option.jpg" width="70%" height="70%">
@@ -342,39 +340,51 @@ Make sure to clean up the service we just created.
 
 * Launch Configuration
 
-    1. In the navigation pane, choose **Launch Configurations**.
+    * In the navigation pane, choose **Launch Configurations**.
 
-    2. Right click on **Auto Scaling Launch** and choose **Delete launch configuration**.
+    * Right click on **Auto Scaling Launch*** and choose **Delete launch configuration**.
 
 * Launch Template 
 
-    1. In the navigation pane, choose **Launch Template**.
+    * In the navigation pane, choose **Launch Template**.
 
-    2. Right click on **Auto Scaling Launch** and choose **Delete template**.
+    * Right click on **Auto Scaling Launch** and choose **Delete template**.
 
 * Auto Scaling Group
 
-    1. In the navigation pane, choose **Auto Scaling Groups**.
+    * In the navigation pane, choose **Auto Scaling Groups**.
 
-    2. Right click on **Auto-Scaling-Group** and choose **Delete**.
+    * Right click on **Auto-Scaling-Group** and choose **Delete**.
 
 * Load Balancer and Target Group
 
-    1. In the navigation pane, choose **Load Balancers**.
+    * In the navigation pane, choose **Load Balancers**.
 
-    2. Right click on **WebServerLB** and choose **Delete**.
+    * Right click on **WebServerLB** and choose **Delete**.
 
-    3. In the navigation pane, choose **Target Groups**.
+    * In the navigation pane, choose **Target Groups**.
 
-    4. Right click on **WebServerTG** and choose **Delete**.
+    * Right click on **WebServerTG** and choose **Delete**.
+
+* NAT Gateway & Elastic IP
+
+    * On the **service** menu, select **VPC**.
+
+    * In the navigation pane, choose **NAT Gateway**.
+
+    * Right click on the **NAT gateway** you created in previous step, select **Delete NAT gateway**.
+
+    * Wait until it finish, then choose **Elastic IPs** in the navigation pane.
+
+    * Right click on the **Elastic IP** you allocated before, select **Release Addresses**.
 
 * CloudFormation Template
 
-    1. On the **service** menu, select **CloudFormation**.
+    * On the **service** menu, select **CloudFormation**.
 
-    2. Select the template you create in the previous step.
+    * Select the template you create in the previous step.
 
-    3. Click the **Delete** button on the right.
+    * Click the **Delete** button on the right.
 
 ## Conclusion
 Congratulations! now you have learned:
