@@ -64,6 +64,10 @@ By default, instances that you launch into an **Amazon VPC** can't communicate w
 
 14. Wait for few minutes until the status of the Stack turn to **CREATE_COMPLETE**.
 
+15. On the services menu, select **EC2**.
+
+16. On the left navigation panel, select **Instances**, then find **EC2-B**, copy the **IPv4 Public IP** to your notepad, we will use it later.
+
 
 ### Create another VPC manually in different Region
 
@@ -86,9 +90,11 @@ By default, instances that you launch into an **Amazon VPC** can't communicate w
 
 6. For the **Name tag**, type ``VPC-A-IGW``, then choose **Create**.
 
-7. On the left navigation panel, select **Subnets**, then choose **Create subnet**.
+7. Select ``VPC-A-IGW`` that you created, choose **Attatch**, then select ``VPC-A`` that you created, choose **Attach**.
 
-8. Enter the following information for your Subnet, then choose **Create**.
+8. On the left navigation panel, select **Subnets**, then choose **Create subnet**.
+
+9. Enter the following information for your Subnet, then choose **Create**.
 
 - **Name tag**: ``VPC-A-Public-Subnet``
 - **VPC**: ``VPC-A``(the vpc that you just created)
@@ -99,16 +105,16 @@ By default, instances that you launch into an **Amazon VPC** can't communicate w
       <img src = "IMAGES/002-Public-Subnet-02.jpg" width = "80%" height = "80%">
       </p>
 
-9. On the left navigation panel, select **Route Tables**, then choose **Create route table**.
+10. On the left navigation panel, select **Route Tables**, then choose **Create route table**.
 
-10. Enter the following information for your route table, then choose **Create**:
+11. Enter the following information for your route table, then choose **Create**:
 
 - **Name tag**: ``VPC-A-Public-RT``
 - **VPC**: ``VPC-A``(the VPC that you just created)
 
-11. Select the Route table that you created, then choose **Routes** on the bottom navigation panel, then choose **Edit routes**.
+12. Select the Route table that you created, then choose **Routes** on the bottom navigation panel, then choose **Edit routes**.
 
-12. Choose **Add routes**, then enter the following information, then choose **Save routes**:
+13. Choose **Add routes**, then enter the following information, then choose **Save routes**:
 
 - **Destination**: ``0.0.0.0/0``
 - **Target**: ``Internet Gateway`` -> ``VPC-A-IGW``(the IGW that you created)
@@ -117,9 +123,9 @@ By default, instances that you launch into an **Amazon VPC** can't communicate w
       <img src = "IMAGES/002-Edit-Routes-03.jpg" width = "80%" height = "80%">
       </p>
 
-13. On the bottom navigation panel, select **Subnet Associations**, then choose **Edit subnet association**.
+14. On the bottom navigation panel, select **Subnet Associations**, then choose **Edit subnet association**.
 
-14. Choose **VPC-A-Public-Subnet** that you created, then choose **Save**.
+15. Choose **VPC-A-Public-Subnet** that you created, then choose **Save**.
 
 <p align = "center">
       <img src = "IMAGES/002-Subnet-Association-04.jpg" width = "80%" height = "80%">
@@ -173,7 +179,7 @@ By default, instances that you launch into an **Amazon VPC** can't communicate w
       <img src = "IMAGES/003-EC2-SG-04.jpg" width = "80%" height = "80%">
       </p>
 
-10. Choose **Launch**, you can either create a new key or choose an existing key.
+10. Choose **Launch**, you can either **create a new key or choose an existing key**.
 
 11. Make sure your instance launched successfully.
 
