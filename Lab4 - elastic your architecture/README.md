@@ -235,7 +235,7 @@ service httpd start
 
 13. Select **Create an Auto Scaling group using this launch configuration**.
 
-Move to step Create Auto Scaling group
+Move to step [Create Auto Scaling group](#create-auto-scaling-group)
 
 ### Create Launch Template
 
