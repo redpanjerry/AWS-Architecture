@@ -142,32 +142,38 @@ ec2_region_endpoint=us-east-1.ec2.amazonaws.com
 
 ```cd /home/ec2-user/.ssh/```
 
-> Since we're going to generate bees, we need to check out the commands we use
+Since we're going to generate bees, we need to check out the commands we use
 
->bees up : generate bees instances on AWS
-bees down : stop and terminate all bees on AWS
-bees report : monitor all bees and send a report to BeeServer
-bees attack : conduct your bees to attack a target!
-
-
->bees up
--s : number of bees
--k : keypair name
--z : available zone
--g : security group name
--l : username
--i : AMI id
--t : instance type
+    bees up : generate bees instances on AWS
+    bees down : stop and terminate all bees on AWS
+    bees report : monitor all bees and send a report to BeeServer
+    bees attack : conduct your bees to attack a target!
 
 
->bees attack
--n : attack times
--c : participate bees number
--k : keypair name
--u : target location'
+bees up
+
+    -s : number of bees
+    -k : keypair name
+    -z : available zone
+    -g : security group name
+    -l : username
+    -i : AMI id
+    -t : instance type
+
+
+bees attack
+
+    -n : attack times
+    -c : participate bees number
+    -k : keypair name
+    -u : target location'
 
 
 2. Generate Bees using Bees up command
+
+> Notice 1: Change "MyAmazonKeypair" to your keypair name.
+
+> Notice 2: You should setup your bees in the same AZ as your bee server.
 
 You can type some important part of the command and leave others default, like:
 
@@ -183,7 +189,6 @@ You can find your AMI ID in here:
     <img src="images/AMI.jpg" width="70%" height="70%">
 </p>
 
-> Notice: You should setup your bees in the same AZ as your bee server.
 
 3. Wait for Bees to load their machine guns, and type `bees report` to check their status.
 
@@ -197,13 +202,17 @@ You can find your AMI ID in here:
 
 4. Test your Elastic Load Balancer or Web Server using bees attack command:
 
->**Notice again, to avoid the unnecessary attack, do not try any other website!**
+> Notice: you can change the attack count if you want.
+
+> **Notice again, to avoid the unnecessary attack, do not try any other website!**
 
 Test ELB:
-```bees attack -n 1000 -c 2 -k MyAmazonKeypair -u http://WebServerLB-XXXXXXXXX.us-east-1.elb.amazonaws.com/```
+```bees attack -n 15000 -c 2 -k MyAmazonKeypair -u http://WebServerLB-XXXXXXXXX.us-east-1.elb.amazonaws.com/```
 
 Test WebServer:
-```bees attack -n 1000 -c 2 -k MyAmazonKeypair -u http://XX.XX.XX.XX```
+```bees attack -n 15000 -c 2 -k MyAmazonKeypair -u http://XX.XX.XX.XX```
+
+> 
 
 <p align="center">
     <img src="images/bees_attack.jpg" width="100%" height="100%">
