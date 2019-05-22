@@ -206,9 +206,17 @@ For the security layer, we have to limit the source which can access to our data
 </p>
 </div>
 
-12. Scroll to the bottom of the page, uncheck the box of: **Deletion protection**.
+12. Uncheck **Monitoring**.
 
-13. Select **Create Database**, it will take ***10 - 15*** minutes to create your database, click **View DB instance details**, and keep refresh your webpage to check if it is done.
+<div>
+<p align=center>
+<img src="images/RDS_Monitoring.jpg" width=70% height=70% />
+</p>
+</div>
+
+13. Scroll to the bottom of the page, uncheck the box of: **Deletion protection**.
+
+14. Select **Create Database**, it will take ***10 - 15*** minutes to create your database, click **View DB instance details**, and keep refresh your webpage to check if it is done.
 
 ### Create an EC2 with a User Data
 
