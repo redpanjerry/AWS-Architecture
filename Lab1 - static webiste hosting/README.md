@@ -47,7 +47,7 @@ We'll upload the web file to the S3 bucket just created via AWS CLI.
 
 - Download web page from [Index.html](https://github.com/ecloudvalley/Run-Serverless-CICD-Pipeline-with-AWS-CodeStar-and-Develop-with-AWS-Cloud9/blob/master/index.html) file of current topic.
 - Right click on the **Raw** button, and choose **Save link as**. Save it in any place of your computer.
-
+> If you are using Mac, the file would be txt file, please remember to change the file name. ex: change index.html.txt to index.html
   <p align="left">
       <img src="images/download-web-page.png" width="80%" height="60%">
   </p>

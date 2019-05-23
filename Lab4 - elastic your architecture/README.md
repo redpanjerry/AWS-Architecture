@@ -255,7 +255,7 @@ Move to step [Create Auto Scaling group](#create-auto-scaling-group)
     * **Key**: `Name`
     * **Value**: `Your name`
 
-5. Scroll down to the bottom of the page, copy and paste the command line below into the **User Data** which host a static web page:
+5. Scroll down to the bottom of the page, expand **Advanced details**, copy and paste the command line below into the **User Data** which host a static web page:
 
 ```bash
 #!/bin/bash
@@ -278,7 +278,7 @@ service httpd start
 1. On the Create Auto Scaling Group, enter the following detail:
 
     * Group name: `Auto-Scaling-Group`
-    * Group size: Start with `1` instance
+    * Group size: Start with `2` instance
     * Network: select **My Lab VPC**
     * Subnet: select both **Lab Private Subnet 1** and **Lab Private Subnet 2**
 
@@ -305,7 +305,7 @@ service httpd start
 8. Specify the following settings:
     * Name: **Scale Group Size**
     * Metric type: **Average CPU Utilization**
-    * Target value: **70**
+    * Target value: **50**
 
 <p align="center">
     <img src="images/011-ASG-Policy.jpg" width="70%" height="70%">
@@ -334,6 +334,8 @@ In the ALB Website, the web page will be changed since refresh the browser. Ther
 Now you can see the **Port**, **Public IP**,**Instance ID** and **Time** shown on the page.
 
 3. Press **Refresh** to see the difference between the website.
+
+To test the Website and Elastic Load Balancer, you can try [Bees-with-Machine-Guns](Bees-with-Machine-Guns/)
 
 ## Clean up
 Make sure to clean up the service we just created.
@@ -397,5 +399,4 @@ Congratulations! now you have learned:
 * Create Auto Scaling Group
 * Trigger Auto Scaling Group with Target Tracking Scaling Policy
 
-## Appendix
-To test the Website and Elastic Load Balancer, you can try [Bees-with-Machine-Guns](Bees-with-Machine-Guns/)
+
