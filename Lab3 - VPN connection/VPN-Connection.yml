@@ -36,9 +36,9 @@ Parameters:
       d2.xlarge, d2.2xlarge, d2.4xlarge, d2.8xlarge]
     ConstraintDescription: must be a valid EC2 instance type.
 
-  LatestAmiId:
-    Type:  'AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>'
-    Default: '/aws/service/ami-amazon-linux-latest/amzn-ami-hvm-x86_64-gp2'
+  #LatestAmiId:
+   # Type:  'AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>'
+    #Default: '/aws/service/ami-amazon-linux-latest/amzn-ami-hvm-x86_64-gp2'
 
 Resources:
 
@@ -107,16 +107,7 @@ Resources:
       SubnetId: !Ref PublicSubnet
       RouteTableId: !Ref PublicRouteTable
     DependsOn: "PublicRouteTable"
-
-  ## NACL Association to subnets
-
-  PublicSubnetNetworkAclAssociation:
-    Type: AWS::EC2::SubnetNetworkAclAssociation
-    Properties:
-      SubnetId: !Ref PublicSubnet
-      NetworkAclId: !GetAtt 
-        - VPC
-        - DefaultNetworkAcl     
+  
 
   ## Security Group
 
@@ -127,10 +118,6 @@ Resources:
       GroupDescription: "VPC-B"
       VpcId: !Ref VPC
       SecurityGroupIngress:
-        - IpProtocol: tcp
-          FromPort: 80
-          ToPort: 80
-          CidrIp: 0.0.0.0/0
         - IpProtocol: tcp
           FromPort: 22
           ToPort: 22
@@ -153,17 +140,15 @@ Resources:
       InstanceType: !Ref 'InstanceType'
       SecurityGroupIds: [!Ref 'WebSecurityGroup']
       KeyName: !Ref 'KeyName'
-      ImageId: !Ref 'LatestAmiId'
+      ImageId: ami-0ebe657bc328d4e82
       UserData:
         Fn::Base64: !Sub |
           #!/bin/bash
           # Install Openswan
           yum install openswan -y
           # Download file
-          wget https://s3.amazonaws.com/lukederbucket2/File_For_Download/ipsec.conf
           wget https://s3.amazonaws.com/lukederbucket2/File_For_Download/sysctl.conf
           # Move File
-          mv ipsec.conf /etc
           mv sysctl.conf /etc
           #  Restart network service
           service network restart

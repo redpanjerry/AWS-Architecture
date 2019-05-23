@@ -66,7 +66,16 @@ By default, instances that you launch into an **Amazon VPC** can't communicate w
 
 15. On the services menu, select **EC2**.
 
-16. On the left navigation panel, select **Instances**, then find **EC2-B**, copy the **IPv4 Public IP** to your notepad, we will use it later.
+16. On the left navigation panel, select **Instances**, choose **EC2-B** -> choose **Actions** -> choose **Networking** -> chppse **Change Source/Dest. Check**, then choose **Yes, Disable**.
+
+<p align = "center">
+      <img src = "IMAGES/001-EC2-Disable-03.jpg" width = "80%" height = "80%">
+      </p>
+
+
+17. Choose **EC2-B**, copy the **IPv4 Public IP** to your notepad, we will use it later.
+
+
 
 
 ### Create another VPC manually in different Region
@@ -232,7 +241,7 @@ By default, instances that you launch into an **Amazon VPC** can't communicate w
       </p>
 
 
-3. Wait for few minutse, them make sure the State of your VPN Connection is **available**. 
+3. Wait for few minutes, them make sure the State of your VPN Connection is **available**. 
 
 4. On the left navigation panel, select **Route Tables**, and choose **VPC-A-Public-RT** that you created.
 
