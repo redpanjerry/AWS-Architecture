@@ -75,7 +75,15 @@ By default, instances that you launch into an **Amazon VPC** can't communicate w
 
 17. Choose **EC2-B**, copy the **IPv4 Public IP** to your notepad, we will use it later.
 
+18. On the left navigation panel, select **Security Group**, then choose **VPC-B**.
 
+19. On the bottom navigation panel, select **Inbound**, then choose **Edit**.
+
+20. Change the **Source** of **SSH** into **My IP**, then choose safe.
+
+<p align = "center">
+      <img src = "IMAGES/001-EC2-SG-MYIP-04.jpg" width = "80%" height = "80%">
+      </p>
 
 
 ### Create another VPC manually in different Region
