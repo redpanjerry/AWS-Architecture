@@ -1,18 +1,18 @@
-## Appendix: Integrate with static website
 
-This section walks you create a static website on S3 and how to integrate the API endpoint with it.
 
-<p align="center">
-    <img src="images/Static-website-on-s3.png">
-</p>
 
-> Make the region are in US East (N. Virginia), which short name is us-east-1, or select to the right region you deployed.
 
 ## Hosting a Static Website on Amazon S3
+
+This section walks you create a static website on S3, and you can integrate the API endpoint with it in future.
 
 You can host a static website on Amazon Simple Storage Service (Amazon S3). </br>
 On a static website, individual webpages include static content. They might also contain client-side scripts. </br>
 To host a static website, you configure an Amazon S3 bucket for website hosting, and then upload your website content to the bucket.
+
+<p align="center">
+    <img src="images/Static-website-on-s3.png">
+</p>
 
 ### Create a S3 bucket
 
@@ -127,4 +127,3 @@ To delete the AWS resources, perform the tasks below in order:
 Congratulations! You now have learned how to:
 
 - Create a static website hosting through S3
-- Integrate API Gateway endpoint with static website
