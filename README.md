@@ -8,28 +8,20 @@ In this lab, you will learn how to upload a single webpage to S3 bucket, and ena
 
 ## [Lab2 - Implement LAMP Structure](../02-implement-lamp-structure/README.md)
 
-Have you ever heard "LAMP" structure ? in this Lab, you will learn what is "LAMP" structure, and how to build a LAMP structure through AWS!
+Have you ever heard "LAMP" structure ? In this Lab, you will learn what is "LAMP" structure, and how to build a LAMP structure through AWS!
 
-## Lab 3 - VPN connection
+## [Lab 3 - VPN connection](../03-vpn-connection/README.md)
 
-<details>
-Two different VPC can connect to each other by VPN connection, even the local can connect to cloud via VPN. In this Lab, you will learn how to build your own internet environment on AWS, and detailed setting about connecting to another VPC via VPN.
-</details>
+Two different VPC can be connected to each other by VPN connection, even the local can connect to cloud via VPN. <br>In this Lab, you will learn how to build your own internet environment on AWS, and detailed setting about connecting to another VPC via VPN.
 
-## Lab 4 - elastic your architecture
+## [Lab 4 - Elastic Your Architecture](../04-elastic-your-architecture/README.md)
 
-<details>
-Will your website accessible when the loading is extremely increasing? In this Lab, you will learn how to make your environment more elstic and scalible. We also use Bees-With-Machine-Gun, an open source tool to test our architecture
-</details>
+Will your website accessible when the loading is extremely increasing? <br>In this Lab, you will learn how to make your environment more elstic and scalible. We also use Bees-With-Machine-Gun, an open source tool to test our architecture.
 
-## Lab 5 - deploy your CloudFormation template
+## [Lab 5 - Deploy Your CloudFormation Template](../05-deploy-your-cloudformation-template/README.md)
 
-<details>
-When your architecture getting more complex, how to ensure every time you rebuild the environment is the same? With CloudFormation, you only write the template once and always got the same result. The template is easy to read and be maintained, also simplified the automating flow.
-</details>
+When your architecture getting more complex, how to ensure every time you rebuild the environment is the same? <br>With CloudFormation, you only write the template once and always got the same result. The template is easy to read and be maintained, also simplified the automating flow.
 
-## Lab 6 - aws AI workshop
+## [Lab 6 - aws AI workshop](../06-walkthrough-aws-ai-service/README.md)
 
-<details>
 We will introduce AI service on AWS, and let you experience those services by hands-on!
-</details>
