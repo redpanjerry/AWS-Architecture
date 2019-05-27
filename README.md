@@ -31,6 +31,6 @@ When your architecture getting more complex, how to ensure every time you rebuil
 With CloudFormation, you only write the template once and always got the same result. <br>
 The template is easy to read and be maintained, also simplified the automating flow.
 
-### [Lab 6 - aws AI workshop](../06-walkthrough-aws-ai-service/README.md)
+### [Lab 6 - AWS AI workshop](../06-walkthrough-aws-ai-service/README.md)
 
 We will introduce AI service on AWS, and let you experience those services by hands-on!
