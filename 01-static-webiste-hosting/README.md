@@ -1,7 +1,3 @@
-
-
-
-
 ## Hosting a Static Website on Amazon S3
 
 This section walks you create a static website on S3, and you can integrate the API endpoint with it in future.
@@ -46,11 +42,8 @@ In this case, we'll create a S3 bucket for it and also enable public access that
 We'll upload the web file to the S3 bucket just created via AWS CLI.
 
 - Download web page from [Index.html](https://github.com/ecloudvalley/Run-Serverless-CICD-Pipeline-with-AWS-CodeStar-and-Develop-with-AWS-Cloud9/blob/master/index.html) file of current topic.
-- Right click on the **Raw** button, and choose **Save link as**. Save it in any place of your computer.
+- Right click on the **Raw** button, and choose **Save link as**/**Download**. Save it in any place of your computer.
 > If you are using Mac, the file would be txt file, please remember to change the file name. ex: change index.html.txt to index.html
-  <p align="left">
-      <img src="images/download-web-page.png" width="80%" height="60%">
-  </p>
 
 - Back to S3 console, double click the S3 bucket you just created, and click **Upload** button.
 - Drug _index.html_ you have downloaded to the upload page, and click **Next**.

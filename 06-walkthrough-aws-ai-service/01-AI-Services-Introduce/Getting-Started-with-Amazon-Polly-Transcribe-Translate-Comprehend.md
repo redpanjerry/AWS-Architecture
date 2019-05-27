@@ -2,9 +2,6 @@ Getting Started with Amazon Polly, Transcribe, Translate and Comprehend
 =================================================================
 In this tutorial, we will show you how to get started with [Amazon Polly](https://aws.amazon.com/tw/polly/), [Amazon Transcribe](https://aws.amazon.com/tw/transcribe/), [Amazon Translate](https://aws.amazon.com/tw/translate/), [Amazon Comprehend](https://aws.amazon.com/tw/comprehend/) using AWS Console.
 
-## Prerequisite
-- Make sure the region is __US East (N. Virginia)__, which its short name is __us-east-1__.
-
 ## Lab tutorial
 ### Using Amazon Polly to turn text into lifelike Speech 
 
@@ -127,5 +124,3 @@ Congratulations! We now have learned how to:
 To avoid excessive billing, please delete the following resources when you have finished your practice.
 - Transcription jobs on Amazon Transcribe.
 - The file you upload to S3.
-## Ongoing:
-- [Create a Chatbot and Configure with Intent and Slot type](../02-Build-an-Amazon-Lex-Bot/201-Create-a-Chatbot-and-Configure-with-Intent-and-Slot-type.md)

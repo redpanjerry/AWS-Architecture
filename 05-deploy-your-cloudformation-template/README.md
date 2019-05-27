@@ -12,11 +12,11 @@ In this lab, we'll deploy a CloudFormation template first. This template include
 
 ## Prerequisites
 
-> The workshop’s region will be in ‘N.Virginia’
+* The workshop’s region will be in ‘N.Virginia’
 
-> Download [CloudFormation-Network.yml](CloudFormation-Network.yml/), [CloudFormation-App.yml](CloudFormation-App.yml/) and [CloudFormation-App-v2.yml](CloudFormation-App-v2.yml/) before you start.
+* Download [CloudFormation-Network.yml](CloudFormation-Network.yml/), [CloudFormation-App.yml](CloudFormation-App.yml/) and [CloudFormation-App-v2.yml](CloudFormation-App-v2.yml/) before you start.
 
-> If you are curious about the template file, prepare a text editor that can read **YAML** or **YML** like [Visual Studio Code](https://code.visualstudio.com/).
+* You can review ClourFormation templates via text editor like [VS Code](https://code.visualstudio.com/) or [NotePad++](https://notepad-plus-plus.org/)...etc.
 
 ## Step by step
 
@@ -151,12 +151,12 @@ Since we already have a VPC and an EC2 instance, now we're going to make a littl
 
 ## Clean up
 
-CloudFormation is easy to deploy and easy to clean up, just select your stack and click **Delete** button on the top. Please delete `Lab-App-Stack` first then delete `Lab-VPC-Stack` because `Lab-App-Stack` is based on the Internet environment created by `Lab-VPC-Stack`. During delete, you can check the **Events** tab and watch the deleting schedule.
+CloudFormation is easy to deploy and easy to clean up, just select your stack and click **Delete** button on the top. <br>Please delete `Lab-App-Stack` first then delete `Lab-VPC-Stack` because `Lab-App-Stack` is based on the Internet environment created by `Lab-VPC-Stack`. <br>During delete, you can check the **Events** tab and watch the deleting schedule.
 
 ## Conclusion
 
 Congratulation! Now you have learned how to:
-* Create a CloudFormation.yaml template.
+* Create a CloudFormation template.
 * Deploy your infrastructure using CloudFormation.
 * Monitor your template's status.
 * Update your template.

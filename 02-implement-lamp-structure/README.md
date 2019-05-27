@@ -20,7 +20,7 @@ In this lab, we will prepare our **VPC** through **Cloudformation**. Create a **
 
 ## Prerequisites
 
-* Make sure your region is in: **N. Virginia**.
+* Make sure your region is the same one.
 
 * Download the source file of this lab:
     * [VPC.yaml](VPC.yaml)

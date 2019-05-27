@@ -16,9 +16,9 @@ When there's huge or unstable traffic, you can use load balancer to distributes 
 The following procedures help you set up a scaled and load-balanced application, you will start with CloudFormation, which automatically deploy half of your VPC environment and a web server. Then you will have to finish another half of VPC by your own. You will attach a load balancer to your Auto Scaling group. The load balancer automatically distributes incoming traffic across the instances in the group. This tutorial attaches a load balancer to an Auto Scaling group when you create the group, and set up a scaling policy to be triggered of target tracking scaling policy.
 
 ## Prerequisites
-> The workshop’s region will be in ‘N.Virginia’
+* Make sure your region is the same one.
 
-> Download [lab-network](lab-network.yml/) to deploy
+* Download [lab-network](lab-network.yml/) to deploy.
 
 ## Step by step 
 ### Deploy your VPC environment
@@ -338,65 +338,24 @@ Now you can see the **Port**, **Public IP**,**Instance ID** and **Time** shown o
 To test the Website and Elastic Load Balancer, you can try [Bees-with-Machine-Guns](Bees-with-Machine-Guns/)
 
 ## Clean up
-Make sure to clean up the service we just created.
+Make sure to clean up the services created.
 
 * Launch Configuration
-
-    * In the navigation pane, choose **Launch Configurations**.
-
-    * Right click on **Auto Scaling Launch*** and choose **Delete launch configuration**.
-
 * Launch Template 
-
-    * In the navigation pane, choose **Launch Template**.
-
-    * Right click on **Auto Scaling Launch** and choose **Delete template**.
-
 * Auto Scaling Group
-
-    * In the navigation pane, choose **Auto Scaling Groups**.
-
-    * Right click on **Auto-Scaling-Group** and choose **Delete**.
-
-* Load Balancer and Target Group
-
-    * In the navigation pane, choose **Load Balancers**.
-
-    * Right click on **WebServerLB** and choose **Delete**.
-
-    * In the navigation pane, choose **Target Groups**.
-
-    * Right click on **WebServerTG** and choose **Delete**.
-
-* NAT Gateway & Elastic IP
-
-    * On the **service** menu, select **VPC**.
-
-    * In the navigation pane, choose **NAT Gateway**.
-
-    * Right click on the **NAT gateway** you created in previous step, select **Delete NAT gateway**.
-
-    * Wait until it finish, then choose **Elastic IPs** in the navigation pane.
-
-    * Right click on the **Elastic IP** you allocated before, select **Release Addresses**.
-
+* Elastic Load Balancer
+* Target Group
+* NAT Gateway
+* Elastic IP
 * CloudFormation Template
-
-    * On the **service** menu, select **CloudFormation**.
-
-    * Select the template you create in the previous step.
-
-    * Click the **Delete** button on the right.
 
 ## Conclusion
 Congratulations! now you have learned:
 
-* Setup your environment with CloudFormation template
-* Create Subnet, NAT Gateway and associate to your route table
-* Create Load Balancer and Target Group
-* Create Launch Template
-* Create Launch Configuration
-* Create Auto Scaling Group
+* Setup network environment with CloudFormation template
+* How to create Subnet, NAT Gateway and associate to your route table
+* How to setup Elastic Load Balancer and Target Group
+* How to setup Auto Scaling Group via Launch Template / Launch Configuration
 * Trigger Auto Scaling Group with Target Tracking Scaling Policy
 
 

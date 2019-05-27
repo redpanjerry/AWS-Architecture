@@ -6,9 +6,6 @@ Create a Chatbot and Configure with Intent and Slot type
 ### Scenario
 This lab use [Amazon Lex](https://aws.amazon.com/tw/lex/) and [Amazon Lambda](https://aws.amazon.com/tw/lambda/) to create the Bot helping you to process orders.
 
-## Prerequisites
-  -  Make sure you are in __US East (N. Virginia)__, which short name is __us-east-1__.
-
 ## Lab tutorial
 ### Create a Lambda Function
 1. On the __Service__ menu, click __Lambda__.
@@ -194,6 +191,3 @@ def lambda_handler(event, context):
 Congratulations! We now have learned how to:
 - Setup the bot.
 - Integrate Amazon Lambda with Amazon Lex.
-
-## Next Level
-- [Integrating an Amazon Lex Bot wit Facebook Messenger](../02-Build-an-Amazon-Lex-Bot/202-Integrating-an-Amazon-Lex-Bot-with-Facebook-Messenger.md)
