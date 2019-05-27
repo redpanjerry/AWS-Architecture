@@ -2,11 +2,11 @@
 
 In this course, you will be able to do 6 hands-on labs, it makes you more familiar with AWS.
 
-## [Lab1 - Static Webiste Hosting](../01-static-webiste-hosting/REAMME.md)
+## [Lab1 - Static Webiste Hosting](../01-static-webiste-hosting/README.md)
 
 In this lab, you will learn how to upload a single webpage to S3 bucket, and enable the function of static website hosting. Anyone know the link would be able to access your website !
 
-## [Lab2 - Implement LAMP Structure](../02-implement-lamp-structure/REAMME.md)
+## [Lab2 - Implement LAMP Structure](../02-implement-lamp-structure/README.md)
 
 Have you ever heard "LAMP" structure ? in this Lab, you will learn what is "LAMP" structure, and how to build a LAMP structure through AWS!
 
