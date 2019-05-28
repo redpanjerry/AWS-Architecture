@@ -154,10 +154,10 @@ By default, instances that you launch into an **Amazon VPC** can't communicate w
 
 2. On the left navigation panel, select **Instances**, then choose **Launch Instance**.
 
-3. For **Amazon Machine Image**, select **Amazon Linux AMI 2018.03.0 (HVM), SSD Volume Type**.
+3. For **Amazon Machine Image**, select **Amazon Linux 2 AMI (HVM), SSD Volume Type**.
 
 <p align = "center">
-      <img src = "IMAGES/003-EC2-AMI-01.jpg" width = "80%" height = "80%">
+      <img src = "IMAGES/003-EC2-AMI-01.png" width = "80%" height = "80%">
       </p>
 
 4. For **Instance Type**, select **t2.micro**, then choose **Next: Configure Instance Detail**.
