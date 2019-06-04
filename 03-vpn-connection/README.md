@@ -6,6 +6,8 @@ A **virtual private cloud (VPC)** is a virtual network dedicated to your AWS acc
 
 By default, instances that you launch into an **Amazon VPC** can't communicate with your own (remote) network. You can enable access to your remote network from your VPC by attaching a virtual private gateway to the VPC, creating a custom route table, updating your security group rules, and creating an **AWS Site-to-Site VPN (Site-to-Site VPN) connection**.
 
+A **site-to-site VPN** allows offices in multiple fixed locations to establish secure connections with each other over a public network such as the internet. Site-to-site VPN extends the company's network, making computer resources from one location available to employees at other locations.
+
 
 ## Architecture
 
