@@ -134,11 +134,7 @@ Resources:
       InstanceType: !Ref 'InstanceType'
       SecurityGroupIds: [!Ref 'WebSecurityGroup']
       KeyName: !Ref 'KeyName'
-<<<<<<< HEAD:Lab3 - VPN connection/VPN-Connection.yml
       ImageId: ami-00d101850e971728d
-=======
-      ImageId: ami-0cb72367e98845d43
->>>>>>> 701c4e8aaa649bf09d62247c1830d22b18fd89b9:03-vpn-connection/VPN-Connection.yml
       UserData:
         Fn::Base64: !Sub |
           #!/bin/bash
