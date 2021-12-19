@@ -1,4 +1,4 @@
-# Welcome to eCloudValley aws-architecture Course!
+# Welcome to aws-architecture Course!
 
 In this course, you will be able to do 6 hands-on labs, it makes you more familiar with AWS.
 
